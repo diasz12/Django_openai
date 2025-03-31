@@ -35,7 +35,7 @@ class Trascricao:
 
         return trascript
     
-def gerar_resumo(texto):
+def gerar_resumo(texto, custom_prompt):
     client = OpenAI(
         api_key=settings.SECRET_KEY
     )
@@ -44,7 +44,7 @@ def gerar_resumo(texto):
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Você é um assistente que resume textos."},
-            {"role": "user", "content": f"Resuma a transcrição a seguir, organizando os passos descritos em ordem lógica. Identifique as ferramentas mencionadas e associe cada etapa à ferramenta quando necessário: {texto}"}
+            {"role": "user", "content": f"{custom_prompt}: {texto}"}
         ]
     )
 
