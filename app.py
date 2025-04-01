@@ -66,3 +66,7 @@ for video in videos:
     st.subheader(video.titulo)
     st.write(f"Resumo: {video.resumo}")
     st.write("---")
+
+if st.button("Limpar histórico"):
+        Video.objects.all().delete()  # Limpa todos os vídeos do banco de dados
+        st.success("Histórico limpo com sucesso!")
