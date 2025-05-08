@@ -132,5 +132,3 @@ MEDIA_URL = '/media/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-
-SECRET_KEY = "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"
